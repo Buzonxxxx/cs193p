@@ -6,6 +6,8 @@
 //  Copyright © 2020 Louis Liao. All rights reserved.
 //
 
+// MARK: Need to finish assiment 1: select ramdom themes
+ 
 import UIKit
 
 class ViewController: UIViewController {
@@ -18,7 +20,13 @@ class ViewController: UIViewController {
     
     @IBOutlet var cardButtons: [UIButton]!
     
+//    var alreadyChoseTheme = false
+    
     @IBAction func touchCard(_ sender: UIButton) {
+//        if alreadyChoseTheme == false {
+//            chooseTheme()
+//            alreadyChoseTheme = true
+//        }
         flipCount += 1
         if let cardNumber = cardButtons.firstIndex(of: sender) {
             game.chooseCard(at: cardNumber)
@@ -33,6 +41,7 @@ class ViewController: UIViewController {
         game.restartGame()
         updateViewFromModel()
         game.cards.shuffle()
+//        chooseTheme()
     }
     func updateViewFromModel() {
         for index in cardButtons.indices {
@@ -47,6 +56,24 @@ class ViewController: UIViewController {
             }
         }
     }
+   
+//    var emojiChoices = [String]()
+//
+//    func chooseTheme() {
+//        let emojiThemes = [
+//            "animals": ["🦙","🦁", "🐒" ],
+//            "sports": ["⚾️", "🏀", "🏄‍♂️"],
+//            "faces": ["😇", "😜", "😳"],
+//            "fruits": ["🍎", "🥑", "🍍"],
+//            "cars": ["🚗", "🚓", "🚓"],
+//            "flags": ["🇺🇸", "🇹🇼", "🇯🇵"]
+//        ]
+//        let themeKeys = Array(emojiThemes.keys)
+//        let themeIndex = Int(arc4random_uniform(UInt32(themeKeys.count)))
+//        emojiChoices = Array(emojiThemes.values)[themeIndex]
+//        print(emojiChoices)
+//    }
+    
     
     var emojiChoices = ["👻", "🎃", "🦙", "💰", "💻", "💩", "😭"]
     

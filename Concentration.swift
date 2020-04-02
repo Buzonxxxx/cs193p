@@ -9,8 +9,7 @@
 import Foundation
 
 class Concentration {
-    var
-    cards = [Card]()
+    var cards = [Card]()
     
     var indexOfOneAndOnlyFacedUpCard: Int?
     
